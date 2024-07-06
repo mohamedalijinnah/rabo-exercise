@@ -1,0 +1,23 @@
+<button [routerLink]="['/create']">Add New</button>
+<table>
+    <thead>
+        <th>Full Name</th>
+        <th>Last Name</th>
+        <th class="center">Email</th>
+        <th class="center">Address</th>
+        <th class="center">Postal code</th>
+        <th class="center">City</th>
+    </thead>
+    <tbody>
+        @for (client of clients | orderBy:orderByField; track client.id){
+        <tr>
+            <td><a [routerLink]="['/detail/' + client.id]">{{client.firstName}}</a></td>
+            <td><a [routerLink]="['/detail/' + client.id]">{{client.lastName}}</a></td>
+            <td>{{client.email}}</td>
+            <td class="center">{{client.address.streetName + client.address.houseNumber.toString() }}</td>
+            <td class="center">{{client.address.postalCode}}</td>
+            <td class="center">{{client.address.city}}</td>
+        </tr>
+        }
+    </tbody>
+</table>

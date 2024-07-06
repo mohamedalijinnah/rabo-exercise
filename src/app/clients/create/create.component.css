@@ -1,0 +1,18 @@
+.formControl {
+    width: 300px;
+    padding: 10px;
+}
+input{
+    margin-left: 10px;
+}
+div.container {
+    width: 300px;
+    border: 15px solid #336699;
+    padding: 50px;
+    margin: 20px;
+}
+.alert{
+    color: red;
+    display: flex;
+
+}

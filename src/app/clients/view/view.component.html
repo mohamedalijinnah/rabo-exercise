@@ -1,0 +1,14 @@
+@if (client){
+    <div>
+        <a [routerLink]="['/']">Back</a>
+        <p>{{client.firstName}}</p>
+        <p>{{client.lastName}}</p>
+        <p>{{client.email}}</p>
+        <p>{{client.address.streetName}}</p>
+        <p>{{client.address.houseNumber}}</p>
+        <p>{{client.address.postalCode}}</p>
+        <p>{{client.address.city}}</p>
+    </div>
+    
+}
+@else {<p>Client is not found</p>}

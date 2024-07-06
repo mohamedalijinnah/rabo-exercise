@@ -1,0 +1,37 @@
+<div class="container">
+    <a [routerLink]="['/']">Back</a>
+    <form [formGroup]="clientForm" (ngSubmit)="saveClient()">
+        <div class="formControl">
+            <input id="firstName" type="text" placeholder="First name" formControlName="firstName" required>
+            <small *ngIf="(firstName?.errors?.['required'] && (firstName?.dirty || firstName?.touched))"
+             class="alert">First Name is required.</small>
+        </div>
+        <div class="formControl">
+            <input id="lastName" type="text" placeholder="Last name" formControlName="lastName" required>
+            <small *ngIf="(lastName?.errors?.['required'] && (lastName?.dirty || lastName?.touched))" class="alert">Last Name is required.</small>
+        </div>
+        <div class="formControl">
+            <input id="email" type="email" placeholder="Email" formControlName="email" required ngModel email>
+            <small *ngIf="(email?.errors?.['required'] && (email?.dirty || email?.touched))" class="alert">Email is required</small>
+    	  <small *ngIf="(email?.errors?.['pattern'] && (email?.dirty || email?.touched))"  
+          class="alert">Please provide a valid email address</small>
+        </div>
+        <div class="formControl">
+            <input id="name" type="text" placeholder="Street name" formControlName="streetName">
+        </div>
+        <div class="formControl">
+            <input id="name" type="text" placeholder="House number" formControlName="houseNumber">
+        </div>
+        <div class="formControl">
+            <input id="name" type="text" placeholder="Postal code" formControlName="postalCode">
+        </div>
+        <div class="formControl">
+            <input id="name" type="text" placeholder="City" formControlName="city">
+        </div>
+        <div class="formControl">
+            <button type="submit" [disabled]="this.clientForm.invalid">Save</button>
+          
+        </div>
+     
+    </form>
+</div>
